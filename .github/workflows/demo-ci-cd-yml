@@ -1,33 +1,34 @@
 name: Demo CI/CD for React App
 
 on:
-  push: branches:[master]
-  wokflow_dispatch:
+  push:
+    branches: [master] # Trigger on pushes to the 'master' branch
+  workflow_dispatch: # Allows us to manually trigger the action from the GitHub UI
 
 permissions:
-  contents: write
+  contents: write # This gives the action write permissions to the repository contents
 
 jobs:
   build_and_deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Use an Ubuntu runner
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3 # Checkout the repository code
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18 # Node.js version 18 (LTS and stable)
 
       - name: Installing dependencies
-        run: npm install
+        run: npm install # Install the dependencies
 
       - name: Build Project
-        run: npm run build
+        run: npm run build # This will output the build files to the 'dist' folder
 
-      - name: Deploy to github pages
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
-          folder: dist
+          branch: gh-pages # Deploy to the 'gh-pages' branch
+          folder: dist # Specify the 'dist' folder for Vite output
