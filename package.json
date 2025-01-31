@@ -1,7 +1,7 @@
 {
   "name": "ci-cd-pipeline-demo",
   "private": true,
-  "homepage": "https://hammad-hasnain.github.io/demo_ci-cd_pipeline_with_github-actions",
+  "homepage": "https://Hammad-Hasnain/demo_ci-cd_pipeline_with_github-actions",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
