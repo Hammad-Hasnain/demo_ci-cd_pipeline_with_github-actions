@@ -6,7 +6,9 @@ const App = () => {
       <h1 style={{ textAlign: "center", fontFamily: "sans-serif" }}>
         CI/CD Pipeline with github actions
       </h1>
-      <h2>WoHoo! Successfully CI/CD Pipeline implemented and deployed </h2>
+      <h2 style={{ textAlign: "center", fontFamily: "sans-serif" }}>
+        WoHoo! Successfully CI/CD Pipeline implemented and deployed{" "}
+      </h2>
     </div>
   );
 };
